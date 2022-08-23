@@ -1,0 +1,32 @@
+.choice-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 20px;
+    border: 0.1rem black;
+    background-color: antiquewhite;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0rem 1.4rem 0 lightblue;
+    transform: translate(-0.1rem);
+    transition: transform 150ms;
+}
+
+
+.choice-preflex {
+    padding: 1.5rem 2.5rem;
+    background-color: rgb(42, 103, 123);
+    color:antiquewhite
+}
+
+.choice-text {
+    padding: 1.5rem; 
+}
+
+h2 {
+    font-size: 40px;
+    color: blue;
+    margin-bottom: 500;
+}
