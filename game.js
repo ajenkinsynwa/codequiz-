@@ -9,7 +9,7 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-window. setInterval('refresh()', 1000);
+window.setInterval('refresh()', 1000);
 
 var sec = 15;
 var time = setInterval(myTimer, 1000);
@@ -38,10 +38,9 @@ let questions = [
         choice2: "Home and Text Markup Link",
         choice3: "Home and Texture Markup Link",
         choice4: "Hyper Text Markup Language",
-        answer: 4 
+        answer: 4
     },
     {
-        
         question: "What is the correct HTML tag for largest heading?",
         choices: "H6",
         choice2: "Head",
@@ -68,38 +67,38 @@ getNewQuestion = () => {
     // }
     questionCounter++;
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-        currentQuestions = availableQuestions[questionIndex];
-        question.innerText = currentQuestions.question;
-        choices.forEach( choice => {
+    currentQuestions = availableQuestions[questionIndex];
+    question.innerText = currentQuestions.question;
+    choices.forEach(choice => {
         const number = choice.dataset["number"];
         choice.innerText = currentQuestions['choice' + number];
-        }); 
+    });
 
-        availableQuestions.splice(questionIndex, 1);
-        acceptingAnswers = true; 
+    availableQuestions.splice(questionIndex, 1);
+    acceptingAnswers = true;
 };
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
-       if (!acceptingAnswers) return;
-       acceptingAnswers = false;
-       const selectedChoice = e.target;
-       const selectedAnswer = parseInt(selectedChoice.dataset["number"]);
-      let classToApply = "incorrect";
-      const scoreElement = document.querySelector('#score');
-      if (selectedAnswer === currentQuestions.answer) {
-          classToApply = "correct";
-          score += 1;
-          console.log('is correct', score)
-           scoreElement.innerHTML = score  
-      } else {
-          score -= 1;
-          console.log('is NOT correct', score)
-        scoreElement.innerHTML = score--;
-      }
-       getNewQuestion();
-       
-});
+        if (!acceptingAnswers) return;
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = parseInt(selectedChoice.dataset["number"]);
+        let classToApply = "incorrect";
+        const scoreElement = document.querySelector('#score');
+        if (selectedAnswer === currentQuestions.answer) {
+            classToApply = "correct";
+            score += 1;
+            console.log('is correct', score)
+            scoreElement.innerHTML = score
+        } else {
+            score -= 1;
+            console.log('is NOT correct', score)
+            scoreElement.innerHTML = score--;
+        }
+        getNewQuestion();
+
+    });
 });
 
 startGame();

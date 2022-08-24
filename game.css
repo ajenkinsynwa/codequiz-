@@ -5,7 +5,14 @@
     font-size: 20px;
     border: 0.1rem black;
     background-color: antiquewhite;
-  
+
+}
+
+.choice-prefix {
+    padding: 1.5rem 2.5rem;
+    background-color: aqua;
+    color: mediumblue;
+
 }
 
 .choice-container:hover {
@@ -15,7 +22,7 @@
     font-size: 20px;
     border: 0.1rem black;
     background-color: antiquewhite;
-  
+
 }
 
 .choice-container:hover {
@@ -28,11 +35,11 @@
 .choice-preflex {
     padding: 1.5rem 2.5rem;
     background-color: rgb(42, 103, 123);
-    color:antiquewhite
+    color: antiquewhite
 }
 
 .choice-text {
-    padding: 1.5rem; 
+    padding: 1.5rem;
     width: 100%;
 }
 
@@ -55,7 +62,7 @@ h2 {
 
 }
 
-.hud-prefix{
+.hud-prefix {
     text-align: center;
     font-size: 2rem;
 }
