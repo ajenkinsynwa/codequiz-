@@ -19,7 +19,9 @@ function myTimer() {
     sec--;
     if (sec == -1) {
         clearInterval(time);
-        alert("Time out!! :(");
+        alert("Time out!! Click to Restart :(");
+        window.location.href = "https://ajenkinsynwa.github.io/codequiz-/";
+
     }
 }
 
