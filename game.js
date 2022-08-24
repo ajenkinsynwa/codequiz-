@@ -44,9 +44,9 @@ let questions = [
     },
     {
         question: "What is the correct HTML tag for largest heading?",
-        choices: "H6",
+        choice1: "H6",
         choice2: "Head",
-        choices: "Heading",
+        choice3: "Heading",
         choice4: "H1",
         answer: 4
     }
