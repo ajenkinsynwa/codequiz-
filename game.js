@@ -99,6 +99,7 @@ choices.forEach(choice => {
             scoreElement.innerHTML = score--;
         }
         getNewQuestion();
+        
 
     });
 });
