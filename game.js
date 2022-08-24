@@ -1,3 +1,5 @@
+
+
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 
@@ -7,7 +9,7 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-window. setInterval('refresh()', 10000);
+window. setInterval('refresh()', 1000);
 
 var sec = 15;
 var time = setInterval(myTimer, 1000);
@@ -35,7 +37,7 @@ let questions = [
         choice1: "Home Tool Markup Link",
         choice2: "Home and Text Markup Link",
         choice3: "Home and Texture Markup Link",
-        choice4: "Hyper Text Markup Link",
+        choice4: "Hyper Text Markup Language",
         answer: 4 
     },
     {
