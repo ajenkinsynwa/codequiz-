@@ -7,6 +7,20 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
+window. setInterval('refresh()', 10000);
+
+var sec = 15;
+var time = setInterval(myTimer, 1000);
+
+function myTimer() {
+    document.getElementById('timer').innerHTML = sec + "sec left";
+    sec--;
+    if (sec == -1) {
+        clearInterval(time);
+        alert("Time out!! :(");
+    }
+}
+
 let questions = [
     {
         question: "What is HTML??",
@@ -26,11 +40,11 @@ let questions = [
     },
     {
         
-        question: "How can you create a email link in HTML?",
-        choices: "Mail>alexjenkins@gmail.com",
-        choice2: "Mail<alexjenkins@gmail.com",
-        choices: "A href=alexjenkns@gmail.com",
-        choice4: "A href=quotes mailto:alexjenkins@gmail.com",
+        question: "What is the correct HTML tag for largest heading?",
+        choices: "H6",
+        choice2: "Head",
+        choices: "Heading",
+        choice4: "H1",
         answer: 4
     }
 ];
@@ -43,19 +57,17 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
-    console.log(availableQuestions);
     getNewQuestion();
 };
 
 getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter > Max_Questions) {
-        return window.location.assign("/end.html");
-    }
+    // if(availableQuestions.length === 0 || questionCounter > Max_Questions) {
+    //     return window.location.assign("/end.html");
+    // }
     questionCounter++;
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
         currentQuestions = availableQuestions[questionIndex];
         question.innerText = currentQuestions.question;
-
         choices.forEach( choice => {
         const number = choice.dataset["number"];
         choice.innerText = currentQuestions['choice' + number];
@@ -68,21 +80,21 @@ getNewQuestion = () => {
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
        if (!acceptingAnswers) return;
-
        acceptingAnswers = false;
        const selectedChoice = e.target;
-       const selectedAnswer = selectedChoice.dataset["number"];
-       // console.log("currentquestions",currentQuestions);
-
-      // const classToApply = "incorrect";
-      // if (selectedAnswer === currentQuestions.answer) {
-           // classToApply = "correct";
-      // }
-
-       //selectedChoice.parentElement.classlist.add(classToApply);
-       //selectedChoice.parentElement.classlist.remove(classToApply);
-
-       
+       const selectedAnswer = parseInt(selectedChoice.dataset["number"]);
+      let classToApply = "incorrect";
+      const scoreElement = document.querySelector('#score');
+      if (selectedAnswer === currentQuestions.answer) {
+          classToApply = "correct";
+          score += 1;
+          console.log('is correct', score)
+           scoreElement.innerHTML = score  
+      } else {
+          score -= 1;
+          console.log('is NOT correct', score)
+        scoreElement.innerHTML = score--;
+      }
        getNewQuestion();
        
 });
