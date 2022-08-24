@@ -9,6 +9,6 @@ I have created a 3 questioned HTML beginner quiz with a 15 second timer. The que
 ![The Password Generator application displays a red button to "Generate Password".](/images/screenshot.png)
 
 # Links To Github and Live Site 
-[Live Portfolio Webpage]()
+[Live Portfolio Webpage](https://ajenkinsynwa.github.io/codequiz-/)
 
 [Github Link](https://github.com/ajenkinsynwa/codequiz-)
