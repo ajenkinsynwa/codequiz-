@@ -7,6 +7,20 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
+window. setInterval('refresh()', 10000);
+
+var sec = 15;
+var time = setInterval(myTimer, 1000);
+
+function myTimer() {
+    document.getElementById('timer').innerHTML = sec + "sec left";
+    sec--;
+    if (sec == -1) {
+        clearInterval(time);
+        alert("Time out!! :(");
+    }
+}
+
 let questions = [
     {
         question: "What is HTML??",
@@ -26,11 +40,11 @@ let questions = [
     },
     {
         
-        question: "How can you create a email link in HTML?",
-        choices: "Mail>alexjenkins@gmail.com",
-        choice2: "Mail<alexjenkins@gmail.com",
-        choices: "A href=alexjenkns@gmail.com",
-        choice4: "A href=quotes mailto:alexjenkins@gmail.com",
+        question: "What is the correct HTML tag for largest heading?",
+        choices: "H6",
+        choice2: "Head",
+        choices: "Heading",
+        choice4: "H1",
         answer: 4
     }
 ];
