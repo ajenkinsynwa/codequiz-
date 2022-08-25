@@ -1,5 +1,3 @@
-
-
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const questionCounterText = document.getElementById('questionCounter');
@@ -10,8 +8,6 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-window.setInterval('refresh()', 1000);
-
 var sec = 15;
 var time = setInterval(myTimer, 1000);
 
@@ -20,7 +16,7 @@ function myTimer() {
     sec--;
     if (sec == -1) {
         clearInterval(time);
-        alert("Time out!! Click to Restart :(");
+        alert("Time out!! Click to Restart");
         window.location.href = "https://ajenkinsynwa.github.io/codequiz-/";
 
     }
@@ -49,7 +45,7 @@ let questions = [
         choice2: "Head",
         choice3: "Heading",
         choice4: "H1",
-        answer: 4
+        answer: 4 
     }
 ];
 
@@ -104,7 +100,6 @@ choices.forEach(choice => {
             scoreElement.innerHTML = score--;
         }
         getNewQuestion();
-        
 
     });
 });
